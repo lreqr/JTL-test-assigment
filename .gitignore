@@ -1,0 +1,9 @@
+# Игнорирование кеша шаблонов
+templates_c/
+admin/templates_c/
+
+# Игнорирование IDE
+.idea/
+
+media/image/product/
+
