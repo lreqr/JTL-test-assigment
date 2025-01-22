@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+	<Name>JTL Test</Name>
+	<Description>Beispiel-Plugin für JTL-Shop 5+</Description>
+	<Author>Felix Moche</Author>
+	<URL>https://www.jtl-software.de</URL>
+	<XMLVersion>100</XMLVersion>
+	<ShopVersion>5.0.0</ShopVersion>
+	<Icon>preview.png</Icon>
+	<PluginID>jtl_test</PluginID>
+	<CreateDate>2024-07-05</CreateDate>
+	<Version>1.2.0</Version>
+	<Install>
+		<FlushTags>CACHING_GROUP_CATEGORY, CACHING_GROUP_ARTICLE</FlushTags>
+		<AdminWidget>
+			<Widget>
+				<Title>Title from NEW extension</Title>
+				<Class>TestWidget</Class>
+				<Container>center</Container>
+				<Description>Example description</Description>
+				<Pos>4</Pos>
+				<Expanded>1</Expanded>
+				<Active>1</Active>
+			</Widget>
+		</AdminWidget>
+		<Locales>
+			<Variable>
+				<VariableLocalized iso="GER">PI ist %s und Parameter 2 lautet: %s.</VariableLocalized>
+				<VariableLocalized iso="ENG">PI is %s and parameter 2 has the value: %s.</VariableLocalized>
+				<Description>Eine Beispiel-Variable.</Description>
+				<Name>xmlp_lang_var_1</Name>
+				<Type>textarea</Type>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Ich bin variabel!</VariableLocalized>
+				<VariableLocalized iso="ENG">I'm variable!</VariableLocalized>
+				<Description>Eine weitere Beispiel-Variable.</Description>
+				<Name>xmlp_lang_var_2</Name>
+				<Type>text</Type>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">42</VariableLocalized>
+				<VariableLocalized iso="ENG">42</VariableLocalized>
+				<Description>Eine Beispiel-Zahl.</Description>
+				<Name>xmlp_lang_var_3</Name>
+				<Type>number</Type>
+			</Variable>
+		</Locales>
+		<Boxes>
+			<Box>
+				<Name>ExampleBoxFromExamplePlugin</Name>
+				<Available>0</Available>
+				<TemplateFile>example_box.tpl</TemplateFile>
+			</Box>
+		</Boxes>
+		<FrontendLink>
+			<Link>
+				<Filename>-</Filename>
+				<Name>JTL Bootstrap Example Page</Name>
+				<FullscreenTemplate>test_page_bootstrap.tpl</FullscreenTemplate>
+				<VisibleAfterLogin>N</VisibleAfterLogin>
+				<PrintButton>N</PrintButton>
+				<SSL>2</SSL>
+				<LinkGroup>Fuss</LinkGroup>
+				<LinkLanguage iso="GER">
+					<Seo>jtl-test-bootstrap-page</Seo>
+					<Name>TestBootstrapPage</Name>
+					<Title>TestBootstrapPage</Title>
+					<MetaTitle>TestPage Meta Title Bootstrap</MetaTitle>
+					<MetaKeywords>Test,Page,Meta,Keyword,Bootstrap</MetaKeywords>
+					<MetaDescription>BootstrapTestPage Meta Description</MetaDescription>
+				</LinkLanguage>
+			</Link>
+			<Link>
+				<Filename>test_page_fullscreen.php</Filename>
+				<Name>JTL Fullscreen Example Page</Name>
+				<FullscreenTemplate>test_page_fullscreen.tpl</FullscreenTemplate>
+				<VisibleAfterLogin>N</VisibleAfterLogin>
+				<PrintButton>N</PrintButton>
+				<SSL>2</SSL>
+				<LinkGroup>Fuss</LinkGroup>
+				<LinkLanguage iso="GER">
+					<Seo>jtl-test-fullscreen-page</Seo>
+					<Name>TestFullscreenPage</Name>
+					<Title>TestFullscreenPage</Title>
+					<MetaTitle>TestPage Meta Title Fullscreen</MetaTitle>
+					<MetaKeywords>Test,Page,Meta,Keyword,Fullscreen</MetaKeywords>
+					<MetaDescription>FullscreenTestPage Meta Description</MetaDescription>
+				</LinkLanguage>
+			</Link>
+			<Link>
+				<Filename>test_page.php</Filename>
+				<Name>JTL Test Page</Name>
+				<Template>test_page.tpl</Template>
+				<VisibleAfterLogin>N</VisibleAfterLogin>
+				<PrintButton>N</PrintButton>
+				<SSL>2</SSL>
+				<LinkLanguage iso="GER">
+					<Seo>jtl-test-page</Seo>
+					<Name>TestPage</Name>
+					<Title>TestPage</Title>
+					<MetaTitle>TestPage Meta Title</MetaTitle>
+					<MetaKeywords>Test,Page,Meta,Keyword</MetaKeywords>
+					<MetaDescription>TestPage Meta Description</MetaDescription>
+				</LinkLanguage>
+			</Link>
+		</FrontendLink>
+		<Adminmenu>
+			<Customlink sort="1">
+				<Name>Ein Testtab</Name>
+			</Customlink>
+			<Customlink sort="2">
+				<Name>Tab2</Name>
+			</Customlink>
+			<Customlink sort="3">
+				<Name>Models</Name>
+			</Customlink>
+			<Settingslink sort="4">
+				<Setting type="text" initialValue="" sort="0" conf="N">
+					<Name>Allgemein</Name>
+					<ValueName>Spacer</ValueName>
+					<Description></Description>
+				</Setting>
+				<Name>Setting Tests</Name>
+				<Setting type="text" initialValue="1" sort="1" conf="Y">
+					<Name>Text Test</Name>
+					<Description>Beschreibung für Text Test</Description>
+					<ValueName>jtl_test_1</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="1" sort="2" conf="Y">
+					<Name>Selectbox Test</Name>
+					<Description>Beschreibung für Selectbox Test</Description>
+					<ValueName>jtl_test_2</ValueName>
+					<OptionsSource>
+						<File>jtl_test_selectsource1.php</File>
+					</OptionsSource>
+					<SelectboxOptions>
+						<Option value="0" sort="1">Option Nummer 1</Option>
+						<Option value="1" sort="2">Option Nummer 2</Option>
+						<Option value="2" sort="3">Option Nummer 3</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="textarea" initialValue="Hallo Welt!" sort="3" conf="Y">
+					<Name>Textarea Test</Name>
+					<Description>Beschreibung für Textarea Test</Description>
+					<ValueName>jtl_test_3</ValueName>
+				</Setting>
+				<Setting type="checkbox" initialValue="" sort="4" conf="Y">
+					<Name>Checkbox Test</Name>
+					<Description>Beschreibung für Checkbox Test</Description>
+					<ValueName>jtl_test_4</ValueName>
+				</Setting>
+				<Setting type="checkbox" initialValue="on" sort="5" conf="Y">
+					<Name>Checkbox Test aktiv</Name>
+					<Description>Beschreibung Nummer 5</Description>
+					<ValueName>jtl_test_5</ValueName>
+				</Setting>
+				<Setting type="radio" initialValue="987" sort="6" conf="Y">
+					<Name>Radio Test</Name>
+					<Description>Beschreibung 6</Description>
+					<ValueName>jtl_test_6</ValueName>
+					<OptionsSource>
+						<File>jtl_test_radiosource1.php</File>
+					</OptionsSource>
+					<RadioOptions>
+						<Option value="0" sort="1">Option 1</Option>
+						<Option value="987" sort="">Option 2</Option>
+						<Option value="2" sort="3">Option 3</Option>
+					</RadioOptions>
+				</Setting>
+				<Setting type="radio" initialValue="Y" sort="6" conf="Y">
+					<Name>Radio Test2</Name>
+					<Description>Beschreibung 6b</Description>
+					<ValueName>jtl_test_6b</ValueName>
+					<RadioOptions>
+						<Option value="X" sort="1">X</Option>
+						<Option value="Y" sort="2">Y</Option>
+						<Option value="Z" sort="3">Z</Option>
+					</RadioOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="1" sort="7" conf="Y" multiple="Y">
+					<Name>Selectbox mit Artikeln</Name>
+					<Description>Hier sollten Artikel angezeigt werden</Description>
+					<ValueName>jtl_test_products</ValueName>
+					<OptionsSource>
+						<File>jtl_test_selectsource2.php</File>
+					</OptionsSource>
+					<SelectboxOptions>
+						<Option value="0" sort="1">Leider fehlgeschlagen</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="N" sort="8" conf="Y">
+					<Name>Debug-Modus</Name>
+					<Description>Activates the debug mode</Description>
+					<ValueName>jtl_test_debug</ValueName>
+					<SelectboxOptions>
+						<Option value="N" sort="1">Nein</Option>
+						<Option value="Y" sort="2">Ja</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="D" sort="9" conf="Y" multiple="Y">
+					<Name>Selectbox multiple Test</Name>
+					<Description></Description>
+					<ValueName>jtl_test_multi_select</ValueName>
+					<SelectboxOptions>
+						<Option value="A" sort="1">aaaaa</Option>
+						<Option value="B" sort="2">bbbbb</Option>
+						<Option value="C" sort="3">ccccc</Option>
+						<Option value="D" sort="3">ddddd</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="colorpicker" initialValue="#ffff00" sort="10" conf="Y">
+					<Name>Farbe</Name>
+					<Description>Eine Farbe mit Colorpicker im Backend</Description>
+					<ValueName>jtl_color_1</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="" sort="20" conf="N">
+					<Name>PHP-Query</Name>
+					<ValueName>Spacer</ValueName>
+					<Description></Description>
+				</Setting>
+				<Setting type="text" initialValue="#content" sort="21" conf="Y">
+					<Name>PHPQuery-Selektor</Name>
+					<Description>Ein beliebiger PHP-Query-Selektor</Description>
+					<ValueName>jtl_test_pqselector</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="append" sort="22" conf="Y">
+					<Name>PHPQuery-Funktion</Name>
+					<Description>Welche Funktion soll für das Einfügen des Templates verwendet werden?</Description>
+					<ValueName>jtl_test_pqfunction</ValueName>
+					<SelectboxOptions>
+						<Option value="append" sort="1">append() - Als als letztes Kind in Selektor einfügen</Option>
+						<Option value="prepend" sort="2">prepend() - Als erstes Kind in Selektor einfügen</Option>
+						<Option value="after" sort="3">after() - Nach Selektor einfügen</Option>
+						<Option value="before" sort="4">before() - Vor Selektor einfügen</Option>
+						<Option value="replaceWith" sort="5">replaceWith() - Selektor durch Inhalt ersetzen</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="" sort="30" conf="N">
+					<Name>Modifikationen</Name>
+					<ValueName>Spacer</ValueName>
+					<Description></Description>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="31" conf="Y">
+					<Name>Produkte modifizieren?</Name>
+					<Description>Hängt den konfigurierten Text an Produktnamen, -beschreibungen und -kurzbeschreibungen
+						an.
+					</Description>
+					<ValueName>modify_products</ValueName>
+					<SelectboxOptions>
+						<Option value="Y" sort="0">Ja</Option>
+						<Option value="N" sort="1">Nein</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="32" conf="Y">
+					<Name>Kategorien modifizieren?</Name>
+					<Description>Hängt den konfigurierten Text an Kategorienamen, -beschreibungen und
+						-kurzbeschreibungen an.
+					</Description>
+					<ValueName>modify_categories</ValueName>
+					<SelectboxOptions>
+						<Option value="Y" sort="0">Ja</Option>
+						<Option value="N" sort="1">Nein</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="Foobar!" sort="33" conf="Y">
+					<Name>Text zum Beispiel-Modifizieren</Name>
+					<Description>Ein Text, der an Produkt- und Kategoriebeschreibungen angehangen wird.</Description>
+					<ValueName>modification_text</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="40" conf="Y">
+					<Name>ConsentItem hinzufügen</Name>
+					<Description>Fügt bei Beispiel-Item in den ConsentManager ein</Description>
+					<ValueName>jtl_test_add_consent_item</ValueName>
+					<SelectboxOptions>
+						<Option value="N" sort="1">Nein</Option>
+						<Option value="Y" sort="2">Ja</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="email" initialValue="" sort="41" conf="Y">
+					<Name>Email Test</Name>
+					<Description>Beschreibung für Email Test</Description>
+					<ValueName>jtl_test_email</ValueName>
+				</Setting>
+				<Setting type="date" initialValue="1" sort="42" conf="Y">
+					<Name>Date Test</Name>
+					<Description>Beschreibung für Date Test</Description>
+					<ValueName>jtl_test_date</ValueName>
+				</Setting>
+				<Setting type="range" initialValue="42" sort="43" conf="Y" min="22" max="77">
+					<Name>Range Test</Name>
+					<Description>Beschreibung für Range Test</Description>
+					<ValueName>jtl_test_range</ValueName>
+				</Setting>
+				<Setting type="week" initialValue="2020-W46" sort="44" conf="Y">
+					<Name>Week Test</Name>
+					<Description>Beschreibung für Week Test</Description>
+					<ValueName>jtl_test_week</ValueName>
+				</Setting>
+				<Setting type="month" initialValue="2020-11" sort="45" conf="Y">
+					<Name>Date Test</Name>
+					<Description>Beschreibung für Month Test</Description>
+					<ValueName>jtl_test_month</ValueName>
+				</Setting>
+				<Setting type="time" initialValue="13:37" sort="46" conf="Y">
+					<Name>Time Test</Name>
+					<Description>Beschreibung für Time Test</Description>
+					<ValueName>jtl_test_time</ValueName>
+				</Setting>
+				<Setting type="tel" initialValue="+49123456789" sort="47" conf="Y">
+					<Name>Tel Test</Name>
+					<Description>Beschreibung für Tel Test</Description>
+					<ValueName>jtl_test_tel</ValueName>
+				</Setting>
+				<Setting type="url" initialValue="https://example.com" sort="48" conf="Y">
+					<Name>URL Test</Name>
+					<Description>Beschreibung für URL Test</Description>
+					<ValueName>jtl_test_url</ValueName>
+				</Setting>
+			</Settingslink>
+		</Adminmenu>
+		<Emailtemplate>
+			<Template>
+				<Name>Testmail</Name>
+				<Description>Email für Testzwecke</Description>
+				<Type>text/html</Type>
+				<ModulId>jtltest</ModulId>
+				<Active>Y</Active>
+				<AKZ>0</AKZ>
+				<AGB>0</AGB>
+				<WRB>0</WRB>
+				<TemplateLanguage iso="GER">
+					<Subject>Testmail Betreff</Subject>
+					<ContentHtml><![CDATA[
+{includeMailTemplate template=header type=html}
+
+Hallo,
+
+<p>dies ist eine <strong>Testemail</strong>.</p>
+<p>Sie hat ansonsten keinen tieferen Sinn.</p>
+Ihr Team von <i>{$Firma->cName}</i>
+
+{includeMailTemplate template=footer type=html}
+                    ]]></ContentHtml>
+					<ContentText><![CDATA[Hallo,
+
+dies ist eine Testemail. Sie hat ansonsten keinen tieferen Sinn.
+Ihr Team von {$Firma->cName}]]></ContentText>
+				</TemplateLanguage>
+				<TemplateLanguage iso="ENG">
+					<Subject>Testmail subject</Subject>
+					<ContentHtml><![CDATA[
+{includeMailTemplate template=header type=html}
+
+Hey there,
+
+<p>this is a <strong>test mail</strong>.</p>
+<p>It does not have any other deeper meaning.</p>
+Regards, <i>{$Firma->cName}</i>
+
+{includeMailTemplate template=footer type=html}
+                    ]]></ContentHtml>
+					<ContentText><![CDATA[Hey there,
+
+this is a test mail.
+It does not have any other deeper meaning.
+
+Regards, {$Firma->cName}]]></ContentText>
+				</TemplateLanguage>
+			</Template>
+		</Emailtemplate>
+		<CSS>
+			<file>
+				<name>foo.css</name>
+				<priority>4</priority>
+			</file>
+			<file>
+				<name>bar.css</name>
+				<priority>9</priority>
+			</file>
+		</CSS>
+		<JS>
+			<file>
+				<name>foo.js</name>
+				<priority>8</priority>
+				<position>body</position>
+			</file>
+			<file>
+				<name>bar.js</name>
+			</file>
+		</JS>
+	</Install>
+</jtlshopplugin>

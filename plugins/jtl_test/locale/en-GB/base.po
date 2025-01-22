@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Beispiel-Plugin für JTL-Shop 5+"
+msgstr "Example plugin for JTL-Shop 5+"
+
+msgid "Allgemein"
+msgstr "General"
+
+msgid "Ein Testtab"
+msgstr "A test tab"
+
+msgid "Setting Tests"
+msgstr "Setting Tests"
+
+msgid "Beschreibung für Text Test"
+msgstr "Description for Text Test"
+
+msgid "Selectbox Test"
+msgstr "Selectbox Test"
+
+msgid "Option Nummer 1"
+msgstr "Option no. 1"
+
+msgid "Option Nummer 2"
+msgstr "Option no. 2"
+
+msgid "Option Nummer 3"
+msgstr "Option no. 3"
+
+msgid "Beschreibung für Selectbox Test"
+msgstr "Description for Selectbox Test"
+
+msgid "Textarea Test"
+msgstr "Textarea Test"
+
+msgid "Beschreibung für Textarea Test"
+msgstr "Description for Textarea Test"
+
+msgid "Checkbox Test"
+msgstr "Checkbox Test"
+
+msgid "Beschreibung für Checkbox Test"
+msgstr "Description for Checkbox Test"
+
+msgid "Checkbox akiv Test"
+msgstr "Checkbox active Test"
+
+msgid "Beschreibung für Checkbox aktiv Test"
+msgstr "Description for Checkbox aktiv Test"
+
+msgid "Radio Test"
+msgstr "Radio Test"
+
+msgid "Beschreibung für Radio Test"
+msgstr "Description for Radio Test"
+
+msgid "Selectbox mit Artikeln"
+msgstr "Selectbox with products"
+
+msgid "Hier sollten Artikel angezeigt werden"
+msgstr "Here should be some products"
+
+msgid "Leider fehlgeschlagen"
+msgstr "Failed"
+
+msgid "Selectbox multiple Test"
+msgstr "Selectbox multiple Test"
+
+msgid "Beschreibung für Selectbox multiple Test"
+msgstr "Description for Selectbox multiple Test"
+
+msgid "aaaaaa"
+msgstr "aaaaaa"
+
+msgid "bbbbbb"
+msgstr "bbbbbb"
+
+msgid "cccccc"
+msgstr "cccccc"
+
+msgid "dddddd"
+msgstr "dddddd"
+
+msgid "Farbe"
+msgstr "Farbe"
+
+msgid "Eine Farbe mit Colorpicker im Backend"
+msgstr "A color with a colorpicker"
+
+msgid "append() - Als als letztes Kind in Selektor einfügen"
+msgstr "append() - Add as last child"
+
+msgid "prepend() - Als erstes Kind in Selektor einfügen"
+msgstr "prepend() - Add as first child"
+
+msgid "after() - Nach Selektor einfügen"
+msgstr "after() - Add after selector"
+
+msgid "before() - Vor Selektor einfügen"
+msgstr "before() - Add before selector"
+
+msgid "replaceWith() - Selektor durch Inhalt ersetzen"
+msgstr "replaceWith() - replace selector with content"
+
+msgid "Produkte modifizieren?"
+msgstr "Modify products?"
+
+msgid ""
+"Hängt den konfigurierten Text an Produktnamen, -beschreibungen und -"
+"kurzbeschreibungen an."
+msgstr ""
+"Appends the configured text to product names, descriptions and short "
+"descriptions."
+
+msgid "Kategorien modifizieren?"
+msgstr "Modify categories?"
+
+msgid ""
+"Hängt den konfigurierten Text an Kategorienamen, -beschreibungen und -"
+"kurzbeschreibungen an."
+msgstr ""
+"Appends the configured text to category names, descriptions and short "
+"descriptions."
+
+msgid "Text zum Beispiel-Modifizieren"
+msgstr "Text for modifications"
+
+msgid "Ein Text, der an Produkt- und Kategoriebeschreibungen angehangen wird."
+msgstr "A text that will be added to products/categories."
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Nein"
+msgstr "No"
+
+msgid "Modifikationen"
+msgstr "Modifications"
+
+msgid "Debug-Modus"
+msgstr "Debug mode"
+
+msgid "PHPQuery"
+msgstr "PHPQuery"
+
+msgid "PHPQuery-Funktion"
+msgstr "PHPQuery function"
+
+msgid "PHPQuery-Selektor"
+msgstr "PHPQuery selector"
+
+msgid "Value one"
+msgstr "Value one"
+
+msgid "Value two"
+msgstr "Value two"
+
+msgid "Value three"
+msgstr "Value three"
+
+msgid "Value four"
+msgstr "Wert four"
+
+msgid "Value five"
+msgstr "Wert five"
+
+msgid "Radio value one"
+msgstr "Radio value one"
+
+msgid "Radio value two"
+msgstr "Radio value two"
+
+msgid "Radio value three"
+msgstr "Radio value three"
+
+msgid "Cache successfully flushed."
+msgstr "Cache successfully flushed."
+
+msgid "Could not flush cache!"
+msgstr "Could not flush cache!"
+
+msgid "CSRF error!"
+msgstr "CSRF error!"
+
+msgid "Content:"
+msgstr "Content:"
+
+msgid "Clear plugin cache"
+msgstr "Clear plugin cache"
+
+msgid "name_jtltest"
+msgstr "Mail for testing purposed!"
