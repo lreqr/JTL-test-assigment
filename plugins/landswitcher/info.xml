@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+	<Name>Landswitcher</Name>
+	<Description>Landswitcher test plugin</Description>
+	<Author>Antonov Vladyslav</Author>
+	<URL>https://www.jtl-software.de</URL>
+	<XMLVersion>100</XMLVersion>
+	<ShopVersion>5.0.0</ShopVersion>
+	<Icon>preview.png</Icon>
+	<PluginID>landswitcher</PluginID>
+	<CreateDate>2024-01-22</CreateDate>
+	<Version>1.0.1</Version>
+	<Install>
+		<FlushTags>CACHING_GROUP_CATEGORY, CACHING_GROUP_ARTICLE</FlushTags>
+		<Locales>
+			<Variable>
+				<VariableLocalized iso="GER">PI ist %s und Parameter 2 lautet: %s.</VariableLocalized>
+				<VariableLocalized iso="ENG">PI is %s and parameter 2 has the value: %s.</VariableLocalized>
+				<Description>Eine Beispiel-Variable.</Description>
+				<Name>test_test_variable</Name>
+				<Type>textarea</Type>
+			</Variable>
+		</Locales>
+		<Adminmenu>
+			<Customlink sort="1">
+				<Name>Form</Name>
+			</Customlink>
+		</Adminmenu>
+		<!--    <JS>-->
+		<!--      <file>-->
+		<!--        <name>foo.js</name>-->
+		<!--        <priority>8</priority>-->
+		<!--        <position>body</position>-->
+		<!--      </file>-->
+		<!--      <file>-->
+		<!--        <name>bar.js</name>-->
+		<!--      </file>-->
+		<!--    </JS>-->
+	</Install>
+</jtlshopplugin>
