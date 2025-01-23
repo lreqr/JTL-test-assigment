@@ -1,0 +1,5 @@
+msgid "TestWidget_title"
+msgstr "Widget-Titel des Beipiel-Plugins (übersetzt)"
+
+msgid "TestWidget_desc"
+msgstr "Widget-Beschreibung des Beipiel-Plugins (übersetzt)"

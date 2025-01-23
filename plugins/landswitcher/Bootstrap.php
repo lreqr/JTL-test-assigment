@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Plugin\landswitcher;
+namespace Plugin\jtl_test;
 
 use JTL\Alert\Alert;
 use JTL\Catalog\Category\Kategorie;
@@ -19,13 +19,9 @@ use JTL\Shop;
 use JTL\Shopsetting;
 use JTL\Smarty\JTLSmarty;
 use Laminas\Diactoros\ServerRequestFactory;
-use Plugin\jtl_test\DemoController;
-use Plugin\jtl_test\ModelBackendController;
 use Plugin\jtl_test\Models\ModelFoo;
 use Plugin\jtl_test\Smarty\Registrator;
 
-use Plugin\jtl_test\TestCronJob;
-use Plugin\jtl_test\TestHelper;
 use function Functional\first;
 
 /**
