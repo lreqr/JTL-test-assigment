@@ -13,9 +13,7 @@ use Plugin\jtl_test\Models\ModelItem;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Plugin\landswitcher\Models\ModelLandswitcher;
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 /**
  * Class ModelBackendController
  * @package Plugin\jtl_test
@@ -35,8 +33,6 @@ class ModelBackendController extends GenericModelController
     /**
      * @inheritdoc
      */
-    protected array $getters = ['id'];
-
     public function getResponse(ServerRequestInterface $request, array $args, JTLSmarty $smarty): ResponseInterface
     {
         $this->smarty = $smarty;

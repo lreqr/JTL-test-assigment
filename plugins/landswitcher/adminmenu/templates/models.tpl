@@ -8,8 +8,8 @@
     edit=true
     search=true
     delete=true
-    disable=true
-    enable=true}
+    disable=false
+    enable=false}
 {elseif $step === 'detail'}
     {include file='tpl_inc/model_detail.tpl'
     item=$item
