@@ -25,6 +25,9 @@
 			<Customlink sort="1">
 				<Name>Form</Name>
 			</Customlink>
+			<Customlink sort="2">
+				<Name>Models</Name>
+			</Customlink>
 		</Adminmenu>
 		<!--    <JS>-->
 		<!--      <file>-->

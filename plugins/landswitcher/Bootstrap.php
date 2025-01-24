@@ -19,9 +19,11 @@ use JTL\Shop;
 use JTL\Shopsetting;
 use JTL\Smarty\JTLSmarty;
 use Laminas\Diactoros\ServerRequestFactory;
+use \Plugin\landswitcher\ModelBackendController;
 use Plugin\jtl_test\Models\ModelFoo;
 use Plugin\jtl_test\Smarty\Registrator;
 
+use Plugin\landswitcher\Models\ModelLandswitcher;
 use function Functional\first;
 
 /**
@@ -59,14 +61,38 @@ class Bootstrap extends Bootstrapper
         $smarty->assign('menuID', $menuID)
             ->assign('posted', null)
             ->assign('vlad', 'TEST');
-
-        $template = 'tab2.tpl';
-        if (Form::validateToken() && ($posted = Request::postVar('tab2_input')) !== null) {
-            $smarty->assign('posted', $posted);
+        if ($tabName === 'Models') {
+            return $this->renderModelTab($menuID, $smarty);
         }
-
+        elseif ($tabName === 'Form'){
+            $template = 'tab2.tpl';
+            if (Form::validateToken() && ($posted = Request::postVar('tab2_input')) !== null) {
+                $smarty->assign('posted', $posted);
+            }
+        }
         return $smarty->assign('backendURL', $backendURL)
             ->fetch($this->getPlugin()->getPaths()->getAdminPath() . '/templates/' . $template);
+    }
+
+    private function renderModelTab(int $menuID, JTLSmarty $smarty): string
+    {
+        $controller         = new ModelBackendController(
+            $this->getDB(),
+            $this->getCache(),
+            Shop::Container()->getAlertService(),
+            Shop::Container()->getAdminAccount(),
+            Shop::Container()->getGetText()
+        );
+        $controller->menuID = $menuID;
+        $controller->plugin = $this->getPlugin();
+        $request            = ServerRequestFactory::fromGlobals($_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
+        $response           = $controller->getResponse($request, [], $smarty);
+        if (\count($response->getHeader('location')) > 0) {
+            \header('Location:' . first($response->getHeader('location')));
+            exit();
+        }
+
+        return (string)$response->getBody();
     }
 
 }
