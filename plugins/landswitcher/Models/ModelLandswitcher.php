@@ -58,7 +58,8 @@ final class ModelLandswitcher extends DataModel
             $attributes = [];
             $id         = DataAttribute::create('id', 'int', null, false, true);
             $id->getInputConfig()->setModifyable(false);
-            $attributes['user_id']        = DataAttribute::create('user_id', 'varchar', null, false);
+            $attributes['user_id']        = DataAttribute::create('user_id', 'varchar', null, false, false);
+            $attributes['user_id']->getInputConfig()->setModifyable(false);
             $attributes['url'] = DataAttribute::create('url', 'varchar', null, false);
             $attributes['cISO']        = DataAttribute::create('cISO', 'varchar', null, false);
             $attributes['id']  = $id;
@@ -66,4 +67,5 @@ final class ModelLandswitcher extends DataModel
 
         return $attributes;
     }
+
 }
