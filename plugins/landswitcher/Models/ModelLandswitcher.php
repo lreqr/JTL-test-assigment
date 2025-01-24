@@ -49,7 +49,8 @@ final class ModelLandswitcher extends DataModel
         throw new Exception(__METHOD__ . ': setting of keyname is not supported', self::ERR_DATABASE);
     }
 
-    public function objectToArray($data) {
+    public function objectToArray($data)
+    {
         if (is_object($data)) {
             $data = get_object_vars($data);
         }
@@ -78,11 +79,21 @@ final class ModelLandswitcher extends DataModel
             $attributes['user_id']->getInputConfig()->setModifyable(false);
             $attributes['url'] = DataAttribute::create('url', 'varchar', null, false);
             $attributes['cISO'] = DataAttribute::create('cISO', 'varchar', null, false);
+            $array_countries = $this->objectToArray(Shop::Container()->getDB()->selectArray('tland', [], []));
+            $array_countries_filtered = array_column($this->filterArray($array_countries, 'cISO'), 'cISO');
+            $array_countries_filtered = array_combine($array_countries_filtered, $array_countries_filtered);
             $attributes['cISO']->getInputConfig()->setInputType('selectbox');
-            $attributes['cISO']->getInputConfig()->setAllowedValues(['ua']);
+            $attributes['cISO']->getInputConfig()->setAllowedValues($array_countries_filtered);
             $attributes['id']  = $id;
         }
         return $attributes;
+    }
+
+    public function filterArray($data, $key)
+    {
+        return array_map(function ($item) use ($key) {
+            return [$key => $item[$key]];
+        }, $data);
     }
 
 
