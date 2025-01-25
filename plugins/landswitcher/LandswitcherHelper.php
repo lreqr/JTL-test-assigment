@@ -12,7 +12,7 @@ abstract class LandswitcherHelper
 {
     public static function objectToArray($data)
     {
-        if (is_object($data)) {
+        if (is_object($data)){
             $data = get_object_vars($data);
         }
         if (is_array($data)) {

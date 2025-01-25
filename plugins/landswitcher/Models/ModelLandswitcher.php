@@ -66,6 +66,7 @@ final class ModelLandswitcher extends DataModel
             $arrayCountries = LandswitcherHelper::objectToArray(
                 Shop::Container()->getDB()->selectArray('tland', [], [])
             );
+
             $arrayCountriesFiltered = array_column(
                 LandswitcherHelper::filterArray($arrayCountries, 'cISO'),
                 'cISO'

@@ -65,12 +65,6 @@ class Bootstrap extends Bootstrapper
         if ($tabName === 'Models') {
             return $this->renderModelTab($menuID, $smarty);
         }
-//        elseif ($tabName === 'Form'){
-//            $template = 'tab2.tpl';
-//            if (Form::validateToken() && ($posted = Request::postVar('tab2_input')) !== null) {
-//                $smarty->assign('posted', $posted);
-//            }
-//        }
         return $smarty->assign('backendURL', $backendURL)
             ->fetch($this->getPlugin()->getPaths()->getAdminPath() . '/templates/' . $template);
     }

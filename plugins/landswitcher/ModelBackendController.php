@@ -35,7 +35,7 @@ class ModelBackendController extends GenericModelController
      */
     public function getResponse(ServerRequestInterface $request, array $args, JTLSmarty $smarty): ResponseInterface
     {
-        $this->smarty = $smarty;                                                    //http://jtlshop/admin/plugin/9
+        $this->smarty = $smarty;                                                    
         $this->route  = \str_replace(Shop::getAdminURL(), '', $this->plugin->getPaths()->getBackendURL());
         $this->smarty->assign('route', $this->route);
         $this->modelClass    = ModelLandswitcher::class;
@@ -47,11 +47,12 @@ class ModelBackendController extends GenericModelController
         } else {
             $item = ModelLandswitcher::loadByAttributes(['id' => Request::getInt('id')], $this->getDB());
             $smarty->assign('item', $item)
+                ->assign('defaultTabbertab', $this->menuID)
                 ->assign('defaultTabbertab', $this->menuID);
         }
         $smarty->assign('step', $tab)
             ->assign('tab', $tab)
-            ->assign('action', /*$this->plugin->getPaths()->getBackendURL()*/ 'http://jtlshop/admin/plugin/9/Controller.php');
+            ->assign('action', $this->plugin->getPaths()->getBackendURL());
         $response = $this->handle(__DIR__ . '/adminmenu/templates/models.tpl');
         if ($this->step === 'detail') {
             $smarty->assign('defaultTabbertab', $this->menuID);
