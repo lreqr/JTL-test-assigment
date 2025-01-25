@@ -23,21 +23,8 @@
 		</Locales>
 		<Adminmenu>
 			<Customlink sort="1">
-				<Name>Form</Name>
-			</Customlink>
-			<Customlink sort="2">
 				<Name>Models</Name>
 			</Customlink>
 		</Adminmenu>
-		<!--    <JS>-->
-		<!--      <file>-->
-		<!--        <name>foo.js</name>-->
-		<!--        <priority>8</priority>-->
-		<!--        <position>body</position>-->
-		<!--      </file>-->
-		<!--      <file>-->
-		<!--        <name>bar.js</name>-->
-		<!--      </file>-->
-		<!--    </JS>-->
 	</Install>
 </jtlshopplugin>
